@@ -23,7 +23,7 @@ test_that("two samples are processed correctly", {
         idxstats_file=c("sample_idxstats.txt", "sample_idxstats_2nd.txt"),
         sample_name=c("Sample1", "Sample2")
     )
-    families <- viral_familes(samples, contig_annotation)
+    families <- viral_families(samples, contig_annotation)
 
     expect_equal(ncol(families), 3)
     expect_equal(nrow(families), 8)
@@ -38,7 +38,7 @@ test_that("two contig samples are processed correctly", {
         idxstats_file=c("sample_contig_annotation.txt", "sample_contig_annotation_2.txt"),
         sample_name=c("SampleFirst", "SampleSecond")
     )
-    families <- viral_familes_contigs(samples)
+    families <- viral_families_contigs(samples)
 
     expect_equal(ncol(families), 3)
     expect_equal(nrow(families), 5 + 3)
