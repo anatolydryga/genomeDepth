@@ -83,3 +83,8 @@ test_that("can add sample name", {
     expect_true("SAMPLE X" %in% fam_count_sample$sample)
 })
 
+
+test_that("family and contig count values are correct", {
+    fam_contig <- get_family_to_contig_count(read_contig_annotation("sample_contig_annotation_all_NAs.dat"))
+    expect_equal(fam_contig[fam_contig$family %in% "UNKNOWN", 2], 3)
+})

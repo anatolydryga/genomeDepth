@@ -27,6 +27,10 @@ add_family_annotation <- function(contig_to_read_count, contig_annotation) {
 #' @return dataframe with 2 columns: family name, number of reads mapped to the family.
 #' @seealso add_family_annotation
 get_family_to_read_count <- function(contig_read_family) {
+    if (sum(is.na(contig_read_family$family)) == length(contig_read_family$family)) { # all NAs and nothing else
+        no_family_annotation <- sum(contig_read_family$read_count[is.na(contig_read_family$family)])
+        return(data.frame(family="UNKNOWN", read_count=no_family_annotation))
+    }
     with_family_annotation <- aggregate(read_count ~ family, contig_read_family, sum)
     with_family_annotation$family <- as.character(with_family_annotation$family)
     no_family_annotation <- sum(contig_read_family$read_count[is.na(contig_read_family$family)])
