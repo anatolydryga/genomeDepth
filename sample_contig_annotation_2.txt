@@ -1,0 +1,9 @@
+contig_name	length	circular	nORFs	nViralORFs	family	nDomains	integrase	vfdb	aclame	viral	nt	bacteria
+1	38546	No	23	3	Myoviridae	51	0	2	8	NA	Citrobacter koseri ATCC BAA-895, complete genome	gi|157144296|ref|NC_009792.1| Citrobacter koseri ATCC BAA-895 chromosome, complete genome
+4	9469	No	8	1	Siphoviridae	18	0	3	2	NA	Klebsiella pneumoniae subsp. pneumoniae MGH 78578, complete sequence	gi|152968582|ref|NC_009648.1| Klebsiella pneumoniae subsp. pneumoniae MGH 78578 chromosome, complete genome
+5	6081	No	1	1	Siphoviridae	2	0	0	1	gi|356870600|ref|NC_016158.1| Escherichia phage HK639, complete genome	Klebsiella pneumoniae subsp. pneumoniae MGH 78578, complete sequence	gi|152968582|ref|NC_009648.1| Klebsiella pneumoniae subsp. pneumoniae MGH 78578 chromosome, complete genome
+7	18145	No	10	3	Siphoviridae	25	0	2	5	gi|169257267|ref|NC_010393.1| Phage Gifsy-2, complete genome	Salmonella enterica subsp. enterica serovar Schwarzengrund str. CVM19633, complete genome	gi|194733902|ref|NC_011094.1| Salmonella enterica subsp. enterica serovar Schwarzengrund str. CVM19633 chromosome, complete genome
+8	4780	No	3	1	Siphoviridae	7	1	0	2	NA	Klebsiella pneumoniae 342, complete genome	gi|206575712|ref|NC_011283.1| Klebsiella pneumoniae 342 chromosome, complete genome
+9	5857	No	4	0	NA	8	0	0	2	NA	Citrobacter koseri ATCC BAA-895, complete genome	gi|157144296|ref|NC_009792.1| Citrobacter koseri ATCC BAA-895 chromosome, complete genome
+10	6371	No	6	0	NA	11	0	2	2	NA	Klebsiella pneumoniae subsp. pneumoniae MGH 78578, complete sequence	gi|152968582|ref|NC_009648.1| Klebsiella pneumoniae subsp. pneumoniae MGH 78578 chromosome, complete genome
+11	3896	No	2	0	NA	5	0	0	1	NA	Escherichia coli ABU 83972, complete genome	gi|26245917|ref|NC_004431.1| Escherichia coli CFT073 chromosome, complete genome
