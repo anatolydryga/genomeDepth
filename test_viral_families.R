@@ -31,3 +31,18 @@ test_that("two samples are processed correctly", {
     expect_true("Sample1" %in% families$sample)
     expect_true("Sample2" %in% families$sample)
 })
+
+
+test_that("two contig samples are processed correctly", {
+    samples <- data.frame(
+        idxstats_file=c("sample_contig_annotation.txt", "sample_contig_annotation_2.txt"),
+        sample_name=c("SampleFirst", "SampleSecond")
+    )
+    families <- viral_familes_contigs(samples)
+
+    expect_equal(ncol(families), 3)
+    expect_equal(nrow(families), 5 + 3)
+    expect_equal(length(unique(families$sample)), 2)
+    expect_true("SampleFirst" %in% families$sample)
+    expect_true("SampleSecond" %in% families$sample)
+})

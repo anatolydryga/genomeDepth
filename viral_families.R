@@ -16,6 +16,23 @@ viral_familes <- function(samples, contig_annotation) {
 }
 
 
+#' for a given annotation of contigs per samples, find viral familes counts for each sample
+#' 
+#' @param sample dataframe with 2 columns: contig_annotation, sample_name.
+#'
+#' @return dataframe with 3 columns: family, contig_count, sample name.
+#' 
+viral_familes_contigs <- function(annotation_samples) {
+    
+    samples_char <- data.frame(lapply(annotation_samples, as.character), stringsAsFactors=FALSE)
+    
+    families <- apply(samples_char, 1, 
+        function(x) { family_contig_count_for_sample(read_contig_annotation(x[1]), x[2])})
+    
+    do.call("rbind", families)
+}
+
+
 #' aux function that return dataframe described in @see viral_familes for a given sample.
 family_read_count_for_sample <- function(idxstats_file, sample_name, contig_annotation) {
     # read file

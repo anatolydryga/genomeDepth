@@ -65,4 +65,21 @@ test_that("family and read count values are correct", {
     expect_equal(family_read[family_read$family %in% "UNKNOWN", 2], 376)
 })
 
+fam_contig <- get_family_to_contig_count(contig_annotation)
+
+test_that("family and contig count values are correct", {
+    expect_equal(fam_contig[fam_contig$family %in% "Myoviridae", 2], 2)
+    expect_equal(fam_contig[fam_contig$family %in% "Podoviridae", 2], 1)
+    expect_equal(fam_contig[fam_contig$family %in% "Siphoviridae", 2], 6)
+    expect_equal(fam_contig[fam_contig$family %in% "Phycodnaviridae", 2], 1)
+    expect_equal(fam_contig[fam_contig$family %in% "UNKNOWN", 2], 5)
+})
+
+test_that("can add sample name", {
+    fam_count_sample <- family_contig_count_for_sample(contig_annotation, "SAMPLE X");
+    names <- colnames(fam_count_sample);
+    expect_true("sample" %in% names)
+    expect_equal(length(unique(fam_count_sample$sample)), 1)
+    expect_true("SAMPLE X" %in% fam_count_sample$sample)
+})
 
