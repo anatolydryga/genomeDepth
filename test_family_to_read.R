@@ -19,7 +19,7 @@ test_that("contig name column is a character", {
     expect_equal(class(contig_annotation$contig_name), "character")
 })
 
-contig_to_read_count <- read_contig_to_read_count("sample_idxstats.txt")
+contig_to_read_count <- read_idxstats("sample_idxstats.txt")
 contig_read_family <- add_family_annotation(contig_to_read_count, contig_annotation)
 
 test_that("can merge contig to read and contig annotation dataframes", {
@@ -85,6 +85,6 @@ test_that("can add sample name", {
 
 
 test_that("family and contig count values are correct", {
-    fam_contig <- get_family_to_contig_count(read_contig_annotation("sample_contig_annotation_all_NAs.dat"))
+    fam_contig <- get_family_to_contig_count(read_contig_annotation("sample_contig_annotation_2.txt"))
     expect_equal(fam_contig[fam_contig$family %in% "UNKNOWN", 2], 3)
 })
