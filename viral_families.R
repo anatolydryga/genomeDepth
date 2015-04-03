@@ -36,7 +36,7 @@ viral_families_contigs <- function(annotation_samples) {
 #' aux function that return dataframe described in @see viral_families for a given sample.
 family_read_count_for_sample <- function(idxstats_file, sample_name, contig_annotation) {
     # read file
-    contig_read_count <- read_contig_to_read_count(idxstats_file)
+    contig_read_count <- read_idxstats(idxstats_file)
     # merge 
     contig_read_count_family <- add_family_annotation(contig_read_count, contig_annotation)
     # summarize count for each family
