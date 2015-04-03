@@ -1,5 +1,17 @@
 #Genome Coverage and Depth
 
+## Coverage, Depth and Number of Reads mapped to Contigs
+
+Number of reads mapped produced by samtools:
+
+```bash
+samtools idxstats file.bam > result_idxstats.dat
+```
+
+BAM file should be sorted and indexed.
+
+
+
 ## Family Read Count
 ```R
 # only need to read once for specific set of contigs
@@ -33,5 +45,6 @@ families <- viral_familes(samples, contig_annotation)
 run the following in R console:
 
 ```
+library(testthat)
 test_dir(".")
 ```
