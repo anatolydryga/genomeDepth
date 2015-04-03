@@ -13,11 +13,14 @@ read_contig_annotation <- function(contig_annotation_file) {
 
 #' for a given dataframe with info about how many reads are mapped to contig 
 #' add viral family annotation
+#' @param idxstats produced by read_idxstats(filename)
 #'
 #' @return dataframe with 3 columns: contig name(contig_name), 
 #' number of reads mapped to contig(read_count), viral family(family).
-add_family_annotation <- function(contig_to_read_count, contig_annotation) {
-    contig_family <- contig_annotation[, c("contig_name", "family")]
+add_family_annotation <- function(idxstats, contig_annotation) {
+    contig_family <- contig_annotation[ , c("contig_name", "family")]
+    contig_to_read_count <- idxstats[ , c("contig_name", "mapped")] 
+    names(contig_to_read_count) <- c("contig_name", "read_count")
     contig_read_family <- merge(contig_to_read_count, contig_family, all.x=TRUE)
     contig_read_family
 }
