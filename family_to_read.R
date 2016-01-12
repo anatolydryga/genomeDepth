@@ -11,6 +11,13 @@ read_contig_annotation <- function(contig_annotation_file) {
     contig_annotation
 }
 
+#' read contig annotation file and add column sample names
+read_contig_annotation_sample <- function(contig_annotation_file, sample_name) {
+    annotation <- read_contig_annotation(contig_annotation_file)
+    annotation$sample_name <- sample_name
+    annotation
+}
+
 #' for a given dataframe with info about how many reads are mapped to contig 
 #' add viral family annotation
 #' @param idxstats produced by read_idxstats(filename)

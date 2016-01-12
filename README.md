@@ -1,3 +1,23 @@
+# Viral Family Frequency
+
+To create Figure with viral family annotations for several samples:
+```{bash}
+Rscript FamilyTypes.R input_file.tsv
+```
+that script creates `Viral_types.pdf` Figure.
+
+Input file(`input_file.tsv`) format has header and data:
+```
+files   sample_names
+file_name1  label1
+file_name2  label2
+file_name3  label3
+```
+where each `file_name*` is tab-separated file with at least 2 columns: contig
+name and family(see file `DNAmod_sample_contig_annotation.tsv` as an example),
+label is used on Figure for that file. The `file_name*` can be produced by
+ContigAnnotation script.
+
 #Genome Coverage and Depth
 
 ## Coverage, Depth and Number of Reads mapped to Contigs
